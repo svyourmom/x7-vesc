@@ -13,10 +13,17 @@ Reject/default handler (unimplemented ids) = `0x0801b54c`.
 | 5 | SET_DUTY | `0x0801c0ac` | impl |
 | 6 | SET_CURRENT | `0x0801c0d4` | impl |
 | 7 | SET_CURRENT_BRAKE | `0x0801c0fc` | impl |
-| 8 | SET_RPM | `0x0801c124` | impl |
+| 8 | SET_RPM | `0x0801c124` | **REPURPOSED** — not set_pid_speed |
 | 9 | SET_POS | `0x0801c130` | impl |
 | 10 | SET_HANDBRAKE | `0x0801c13c` | impl |
 | 11 | SET_DETECT | `0x0801b574` | impl |
+
+<!-- id 8 SET_RPM is repurposed on X9KV3: handler 0x0801c124 -> 0x08021d40 does NOT read the
+     payload or call mc_interface_set_pid_speed. It float-range-checks (vs 30.0) and calls
+     0x0801ab80 (the mode/display broadcast used by set_displays_mode), so sending COMM 8 does
+     nothing to the motor and perturbs the ride mode. For motion use SET_DUTY(5)/SET_CURRENT(6),
+     the real mc_interface_set_duty (0x08023b00) / set_current (0x08023c30) handlers. -->
+
 | 12 | SET_SERVO_POS | `0x0801b54c` | **UNIMPLEMENTED** |
 | 13 | SET_MCCONF | `0x0801c160` | impl |
 | 14 | GET_MCCONF | `0x0801b858` | impl |

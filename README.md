@@ -30,6 +30,8 @@ interface and from a dump of its own firmware. The goal is **documentation and i
 | [docs/04-terminal-commands.md](docs/04-terminal-commands.md) | the custom terminal command set (traction control, wheelie, IMU, user auth…) |
 | [docs/05-flashing-over-ble.md](docs/05-flashing-over-ble.md) | the OTA flash flow, flash map, and the "no signature" finding |
 | [docs/06-mods-mode-over-ble.md](docs/06-mods-mode-over-ble.md) | how-to: control ride mode from Bluetooth (a small firmware patch) |
+| [docs/07-firmware-map-full.md](docs/07-firmware-map-full.md) | **the full firmware map** — memory globals, dispatch tables, subsystems, addresses |
+| [reference/](reference/) | firmware analysis: function inventory + command/dispatch maps + protocol decodes (logic, not code) |
 | [tools/](tools/) | Python tools: BLE VESC client, firmware uploader |
 | [hardware/](hardware/) | teardown / hardware notes (WIP) |
 

@@ -1,5 +1,8 @@
 # Firmware map (X-9000 V3, VESC FW 5.3 + EBMX app layer)
 
+> This is a summary. The **full map** (all globals, dispatch tables, subsystem addresses) is
+> [07-firmware-map-full.md](07-firmware-map-full.md); the analysis artifacts are in [../reference/](../reference/).
+
 High-level reverse-engineering map of the controller firmware. STM32F4 (Cortex-M4, Thumb-2),
 image loaded at `0x08000000`. This documents *how it works* — no binary or decompiled source is
 redistributed.

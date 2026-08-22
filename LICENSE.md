@@ -9,12 +9,15 @@ The Python tools and the assembly stub under `tools/` are original work, release
 **MIT License**.
 
 ## Not included / not covered
-- **No firmware binary** and **no wholesale decompiled source** of the controller are distributed
-  here. This repo contains only behavioral/protocol documentation derived from observing hardware
-  the author owns, plus original tools.
-- The underlying VESC firmware is © its authors under the GPL; the EBMX/"Ultrabee" application
-  layer is © EBMX. Trademarks belong to their owners. This project is independent and not
-  affiliated with or endorsed by EBMX, VESC, or Talaria.
+- **No firmware binary** and **no decompiled source code** of the controller are distributed here
+  (see `.gitignore`).
+- `reference/` and the firmware map contain firmware-derived **analysis** (addresses, function
+  inventory, command/dispatch maps, decoded protocol) — interoperability documentation, not code.
+  The underlying firmware facts belong to their original authors and are documented here, not
+  relicensed: VESC firmware (© its authors, GPL) and the EBMX / "Ultrabee" application layer
+  (© EBMX). See `reference/README.md`.
+- Trademarks belong to their owners. This project is independent and not affiliated with or endorsed
+  by EBMX, VESC, Greenway, or Talaria.
 
 ## Disclaimer
 Everything here is provided **as-is, without warranty**. Interacting with or modifying a motor

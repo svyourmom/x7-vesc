@@ -1,0 +1,882 @@
+0x0800cc92	`FpG
+0x0800ccdf	p`FpG
+0x0800d566	(F@!
+0x0800d71b	KpGCj
+0x0800d817	`X`pG
+0x0800df99	h)F F
+0x0800dfe7	h1F F
+0x0800e085	h)F F
+0x0800e151	FUF F
+0x0800e545	pC`pG
+0x0800e8f8	4 [i
+0x0800ead2	D,,=,
+0x0800ebe6	4 [i
+0x0800f1f7	CSfpG
+0x0801087a	T18F
+0x0801088c	T10F
+0x0801089c	T1(F
+0x080108ac	T1 F
+0x08011364	 #H@
+0x080118dc	======
+0x08011d68	~H`"
+0x08011db4	kH"F
+0x08011e3e	IH`"
+0x08011e8a	6H*F
+0x08011fac	2F=H
+0x08011fce	5H@"
+0x080120b3	L@" F
+0x08012133	L@" F
+0x08012587	3#`#h
+0x08012ca0	 K!H
+0x0801406a	sJsL
+0x080149ae	}H}I
+0x080152ed	`pGpI
+0x08015312	pGpI
+0x08015baa	rN3h
+0x0801677e	%J%K&H
+0x08017282	_J_H
+0x08017ddc	ah8F
+0x080182da	pGP^
+0x0801b29c	Z4@#
+0x0801b2a4	X4 #
+0x0801d19f	F9FKF
+0x0801d9eb	a"hch
+0x0801da12	"hch
+0x0801da40	zw'`
+0x0801db26	pG@~
+0x0801db4a	 0pG
+0x0801de1c	jF2#
+0x0801de8c	+K,J,H
+0x0801e0ed	HjF2#
+0x0801ed1a	QJ0F
+0x0801f853	E33S@
+0x080201c2	!L!I"J"N#M#H
+0x08020cdb	`+p#p
+0x08021508	IKJH
+0x08021518	GKHH
+0x08021528	EKFH
+0x080218a6	,!pG
+0x080218ca	,!pG
+0x080218f2	9zpG
+0x080219d2	ozpG
+0x08021e04	fff?
+0x08022913	8b>y>"% C
+0x08022de2	zk-K
+0x08023016	 #pG
+0x080242d3	h;hKD
+0x080242e6	jHjJ
+0x08024335	 ;hYI
+0x0802436e	@J;h
+0x080244d2	zC(x
+0x080262d2	 L M
+0x080262d7	# F@"
+0x08028594	 F`"
+0x08028cc4	ZO;x
+0x08028d18	FMGKGH
+0x08028d2e	DJDK
+0x08028d42	BJBK
+0x08028d5c	>K?I?H
+0x08028d74	?K@I@H
+0x08028d9f	#;p;x
+0x08029556	-zcy
+0x0802ba54	CBSPpG
+0x0802d024	@!Jx
+0x0802e0ef	D33s?
+0x0802e502	4Bfff?
+0x0802e5f1	KXjpG
+0x0802ff68	YJjH[
+0x08031232	(`;h
+0x08031b5c	|H}I}J
+0x08031bf2	]N]I^J
+0x08031c8a	2M+x
+0x08031caa	)O*N;h
+0x08032c0c	" ;h
+0x080334a0	UJTH
+0x08033de2	bxp*
+0x08033df0	bxi*
+0x08034356	iHiK
+0x080346ff	##p#x
+0x08034bb1	KX}pG
+0x08034e92	_zpG
+0x080350b1	KXxpG
+0x08035113	Bfff@
+0x08035135	`oIHz
+0x08035269	`"IHz
+0x08035391	KX~pG
+0x080355b3	 333?
+0x08035681	KXxpG
+0x08036134	7M8H
+0x08036497	>333?
+0x080366c2	FLFJ
+0x080367ab	>333?
+0x08036fd8	&M+h
+0x0803708f	>333?
+0x08037528	(L"h
+0x0803770b	#3`+h
+0x08037b2b	>333?
+0x080388b2	>hFHGIGJ
+0x0803bc8e	d#``"z#r
+0x0803bee4	"F)F
+0x0803c2d8	%FB]
+0x0803cc4a	"0pG
+0x0803ccec	K`pG
+0x0803cd32	S`pG
+0x0803cdf1	SS`pG
+0x0803cec4	C`pG
+0x0803d181	KXapG
+0x0803d1a1	KXapG
+0x0803d1bb	JY`Z`pG
+0x0803d3f0	PdpG
+0x0803d430	PbpG
+0x0803d487	sSgpG
+0x0803da90	CdpG
+0x0803dab0	CdpG
+0x0803dad1	@C`pG
+0x0803db00	AapG
+0x0803db5d	CA`pG
+0x0803dc01	KX`pG
+0x0803f610	#A3C
+0x0803fddc	U2l>
+0x0804058d	83F*F
+0x08040d04	IF0F
+0x08040f20	IF0F
+0x080413f1	F2F#F
+0x080419ca	;{BL
+0x08041a7d	K F)F
+0x08041d22	1{:L
+0x080439fa	#0T`
+0x08043cc3	#PFYF
+0x08043eb8	;x0+
+0x0804402f	KPFYF
+0x08044d8c	Bxl*
+0x08044de4	Bxh*
+0x08045fea	2F;FbI
+0x08046007	"@FIF
+0x08046150	JFSF0F9F
+0x080466f8	iK8FAF
+0x0804684a	ih F
+0x08046905	FMFlK
+0x080469a2	FK8FAF
+0x08046a97	%ed)F F
+0x08046de4	Aa<F
+0x08046ec6	P+5F
+0x08046ff6	kx++
+0x080470f2	1F@F
+0x08047932	UFLF
+0x08048bc0	TS5700N8501
+0x08048bd0	idle
+0x08048be0	main
+0x08048d50	DMA failure
+0x08048e70	Flash check
+0x08048e80	Main periodic
+0x08049090	mcpwm timer
+0x080490a0	rpm timer
+0x080490c0	FAULT_HARDWARE
+0x080490d0	HW_TYPE_VESC
+0x080490e0	HW_TYPE_VESC_BMS
+0x080490f4	HW_TYPE_CUSTOM_MODULE
+0x08049320	true
+0x08049328	false
+0x08049354	ping
+0x08049364	stop
+0x0804937c	last_adc_duration
+0x08049390	Latest ADC duration: %.4f ms
+0x080493b0	Latest injected ADC duration: %.4f ms
+0x08049424	core free memory : %u bytes
+0x08049440	heap fragments   : %u
+0x08049478	threads
+0x08049480	    addr    stack prio refs     state           name motor time    
+0x080494c4	-------------------------------------------------------------------
+0x08049508	%.8lx %.8lx %4lu %4lu %9s %14s %5lu %lu (%.1f %%)
+0x08049540	faults
+0x080495a0	Fault            : %s
+0x080495b8	Motor            : %d
+0x080495d0	Current          : %.1f
+0x080495e8	Current filtered : %.1f
+0x08049600	Voltage          : %.2f
+0x08049618	Duty             : %.3f
+0x08049630	RPM              : %.1f
+0x08049648	Tacho            : %d
+0x08049660	Cycles running   : %d
+0x08049678	TIM duty         : %d
+0x08049690	TIM val samp     : %d
+0x080496a8	TIM current samp : %d
+0x080496c0	TIM top          : %d
+0x080496d8	Comm step        : %d
+0x080496f0	Temperature      : %.2f
+0x08049724	tacho
+0x08049744	dist
+0x0804974c	Trip dist.      : %.2f m
+0x08049768	Trip dist. (ABS): %.2f m
+0x080497a4	Tim1 CNT: %i
+0x080497b4	Tim8 CNT: %i
+0x080497c4	Tim2 CNT: %i
+0x080497d4	Amount off CNT: %i
+0x080497e8	Duty cycle1: %u
+0x080497f8	Duty cycle2: %u
+0x08049808	Duty cycle3: %u
+0x08049818	Top: %u
+0x08049820	Dir1: %u
+0x0804982c	Dir8: %u
+0x08049838	Voltage sample: %u
+0x0804984c	Current 1 sample: %u
+0x0804987c	volt
+0x0804989c	param_detect
+0x080498b0	Cycle integrator limit: %.2f
+0x080498d0	Coupling factor: %.2f
+0x080498e8	Detected hall sensor table:
+0x08049924	Hall sensor detection failed:
+0x08049a1c	rpm_dep
+0x08049a24	Cycle int limit: %.2f
+0x08049a3c	Cycle int limit running: %.2f
+0x08049a78	can_devs
+0x08049ab4	ID                 : %i
+0x08049acc	RX Time            : %i
+0x08049ae4	Age (milliseconds) : %.2f
+0x08049b00	RPM                : %.2f
+0x08049b1c	Current            : %.2f
+0x08049b54	IO Board ADC 1_4
+0x08049b94	IO Board ADC 5_8
+0x08049ba8	IO Board Inputs
+0x08049bf8	foc_encoder_detect
+0x08049c0c	Offset   : %.2f
+0x08049c1c	Ratio    : %.2f
+0x08049c7c	measure_res
+0x08049ca0	measure_ind
+0x08049ce0	measure_linkage
+0x08049d2c	measure_res_ind
+0x08049d3c	Resistance: %.6f ohm
+0x08049d7c	measure_linkage_foc
+0x08049d90	measure_linkage_openloop
+0x08049dac	Measuring flux linkage...
+0x08049e50	foc_state
+0x08049e5c	foc_dc_cal
+0x08049e68	Performing DC offset calibration...
+0x08049ea8	hw_status
+0x08049eb4	Firmware: %d.%d
+0x08049ec4	X-9000 V3 20260714  
+0x08049edc	Hardware: %s
+0x08049eec	UUID: %02X %02X %02X %02X %02X %02X %02X %02X %02X %02X %02X %02X
+0x08049f30	Permanent NRF found: %s
+0x08049f48	Odometer : %llu m
+0x08049f5c	Runtime  : %llu s
+0x08049f70	FOC Current Offsets: %.2f %.2f %.2f
+0x08049f94	FOC Voltage Offsets: %.4f %.4f %.4f
+0x08049fb8	FOC Voltage Offsets Undriven: %.4f %.4f %.4f
+0x08049fe8	USB config events: %d
+0x0804a000	USB write timeouts: %u
+0x0804a018	Mempool mcconf now: %d highest: %d (max %d)
+0x0804a044	Mempool appconf now: %d highest: %d (max %d)
+0x0804a074	foc_openloop
+0x0804a0ac	foc_openloop_duty
+0x0804a0c0	nrf_ext_set_enabled
+0x0804a0d4	foc_sensors_detect_apply
+0x0804a17c	rotor_lock_openloop
+0x0804a194	T left: %.2f s
+0x0804a1ac	foc_detect_apply_all
+0x0804a1c4	Running detection...
+0x0804a1dc	Res: %d
+0x0804a1e4	Detection finished and applied. Results:
+0x0804a210	Motor Current       : %.1f A
+0x0804a230	Motor R             : %.2f mOhm
+0x0804a250	Motor L             : %.2f uH
+0x0804a270	Motor Flux Linkage  : %.3f mWb
+0x0804a290	Temp Comp           : %s
+0x0804a2ac	Temp Comp Base Temp : %.1f degC
+0x0804a2cc	Could not measure flux linkage.
+0x0804a2ec	Fault code occurred during detection.
+0x0804a328	can_scan
+0x0804a334	Found %s with ID: %d
+0x0804a364	foc_detect_apply_all_can
+0x0804a380	Motor L             : %.2f microH
+0x0804a3a4	encoder
+0x0804a3ac	SPI encoder value: %d, errors: %d, error rate: %.3f %%
+0x0804a3e4	SPI encoder value: %d, errors: %d, error rate: %.3f %%, Connected: %u
+0x0804a454	Low flux error (no magnet): errors: %d, error rate: %.3f %%
+0x0804a490	Sin/Cos encoder signal below minimum amplitude: errors: %d, error rate: %.3f %%
+0x0804a4e0	Sin/Cos encoder signal above maximum amplitude: errors: %d, error rate: %.3f %%
+0x0804a530	Resolver Loss Of Tracking (>5%c error): errors: %d, error rate: %.3f %%
+0x0804a578	Resolver Degradation Of Signal (>33%c error): errors: %d, error rate: %.3f %%
+0x0804a5c8	Resolver Loss Of Signal (>57%c error): errors: %d, error rate: %.3f %%
+0x0804a610	encoder_clear_errors
+0x0804a628	encoder_clear_multiturn
+0x0804a640	uptime
+0x0804a658	hall_analyze
+0x0804a68c	Hall Sensor State
+0x0804a6a0	Angle
+0x0804a6a8	Hall 1
+0x0804a6b0	Hall 2
+0x0804a6b8	Hall 3
+0x0804a6c0	Combined
+0x0804a73c	Hall diff %d: %.1f degrees
+0x0804a8ec	io_board_set_output
+0x0804a914	io_board_set_output_pwm
+0x0804a930	MC CFG crc: 0x%04X (stored)  0x%04X (recalc)
+0x0804a960	APP CFG crc: 0x%04X (stored)  0x%04X (recalc)
+0x0804a9dc	drv_reset_faults
+0x0804a9f0	update_pid_pos_offset
+0x0804aa08	music
+0x0804aa10	Valid commands are:
+0x0804aa24	  Show this help
+0x0804aa38	  Print pong here to see if the reply works
+0x0804aa64	  Stop the motor
+0x0804aa78	  The time the latest ADC interrupt consumed
+0x0804aaac	  The calculated kv of the motor
+0x0804aad0	  Show memory usage
+0x0804aae4	  List all threads
+0x0804aaf8	  Prints the current fault code
+0x0804ab18	  Prints all stored fault codes and conditions when they arrived
+0x0804ab5c	  Prints the current electrical RPM
+0x0804ab80	  Prints tachometer value
+0x0804ab9c	  Prints odometer value
+0x0804abb4	  Prints tim1 and tim8 settings
+0x0804abd4	  Prints different voltages
+0x0804abf0	param_detect [current] [min_rpm] [low_duty]
+0x0804ac1c	  Spin up the motor in COMM_MODE_DELAY and compute its parameters.
+0x0804ac60	  This test should be performed without load on the motor.
+0x0804ac9c	  Example: param_detect 5.0 600 0.06
+0x0804acc4	  Prints some rpm-dep values
+0x0804ace4	  Prints all CAN devices seen on the bus the past second
+0x0804ad20	foc_encoder_detect [current]
+0x0804ad40	  Run the motor at 1Hz on open loop and compute encoder settings
+0x0804ad84	measure_res [current]
+0x0804ad9c	  Lock the motor with a current and calculate its resistance
+0x0804addc	measure_ind [duty]
+0x0804adf0	  Send short voltage pulses, measure the current and calculate the motor inductance
+0x0804ae44	measure_linkage [current] [duty] [min_erpm] [motor_res]
+0x0804ae7c	  Run the motor in BLDC delay mode and measure the flux linkage
+0x0804aebc	  example measure_linkage 5 0.5 700 0.076
+0x0804aee8	  tip: measure the resistance with measure_res first
+0x0804af20	  Measure the motor resistance and inductance with an incremental adaptive algorithm.
+0x0804af78	measure_linkage_foc [duty]
+0x0804af94	  Run the motor with FOC and measure the flux linkage.
+0x0804afcc	measure_linkage_openloop [current] [duty] [erpm_per_sec] [motor_res] [motor_ind]
+0x0804b020	  Run the motor in openloop FOC and measure the flux linkage
+0x0804b060	  example measure_linkage_openloop 5 0.5 1000 0.076 0.000015
+0x0804b0a0	  Print some FOC state variables.
+0x0804b0c4	  Calibrate current and voltage DC offsets.
+0x0804b0f0	  Print some hardware status information.
+0x0804b11c	foc_openloop [current] [erpm]
+0x0804b13c	  Create an open loop rotating current vector.
+0x0804b16c	foc_openloop_duty [duty] [erpm]
+0x0804b18c	  Create an open loop rotating voltage vector.
+0x0804b1bc	nrf_ext_set_enabled [enabled]
+0x0804b1dc	  Enable or disable external NRF51822.
+0x0804b204	foc_sensors_detect_apply [current]
+0x0804b228	  Automatically detect FOC sensors, and apply settings on success.
+0x0804b26c	rotor_lock_openloop [current_A] [time_S] [angle_DEG]
+0x0804b2a4	  Lock the motor with a current for a given time. Time 0 means forever, or
+0x0804b2f0	  or until the heartbeat packets stop.
+0x0804b318	foc_detect_apply_all [max_power_loss_W]
+0x0804b340	  Detect and apply all motor settings, based on maximum resistive motor power losses.
+0x0804b398	  Scan CAN-bus using ping commands, and print all devices that are found.
+0x0804b3e4	foc_detect_apply_all_can [max_power_loss_W]
+0x0804b410	  Detect and apply all motor settings, based on maximum resistive motor power losses. Also
+0x0804b46c	  initiates detection in all VESCs found on the CAN-bus.
+0x0804b4a8	  Prints the status of the AS5047, AD2S1205, or TS5700N8501 encoder.
+0x0804b4f0	  Clear error of the TS5700N8501 encoder.)
+0x0804b51c	  Clear multiturn counter of the TS5700N8501 encoder.)
+0x0804b554	  Prints how many seconds have passed since boot.
+0x0804b588	hall_analyze [current]
+0x0804b5a0	  Rotate motor in open loop and analyze hall sensors.
+0x0804b5d8	io_board_set_output [id] [ch] [state]
+0x0804b600	  Set digital output of IO board.
+0x0804b624	io_board_set_output_pwm [id] [ch] [duty]
+0x0804b650	  Set pwm output of IO board.
+0x0804b670	  Print CRC values.
+0x0804b684	  Reset gate driver faults (if possible).
+0x0804b6b0	update_pid_pos_offset [angle_now] [store]
+0x0804b6dc	  Update position PID offset.
+0x0804b6fc	UltrabeeDisplayStatus
+0x0804b714	%s %s
+0x0804b71c	  %s
+0x0804b724	  There is no help available for this command.
+0x0804b7a0	READY
+0x0804b7a8	WTSTART
+0x0804b7b0	SUSPENDED
+0x0804b7bc	QUEUED
+0x0804b7c4	WTSEM
+0x0804b7cc	WTMTX
+0x0804b7d4	WTCOND
+0x0804b7dc	SLEEPING
+0x0804b7e8	WTEXIT
+0x0804b7f0	WTOREVT
+0x0804b7f8	WTANDEVT
+0x0804b804	SNDMSGQ
+0x0804b80c	SNDMSG
+0x0804b814	WTMSG
+0x0804b81c	FINAL
+0x0804ba70	comm_block
+0x0804ba80	len fail
+0x0804ba8c	Warning: Could not set mcconf due to wrong signature
+0x0804bac4	Warning: Motor stil rolling
+0x0804bae0	Warning: Could not set appconf due to wrong signature
+0x0804bb20	Timeout
+0x0804bb30	CAN status
+0x0804bb40	CAN read
+0x0804bb50	CAN process
+0x0804bb5c	can_ok
+0x0804bb64	can2_ok
+0x0804bbd0	SampleSender
+0x0804bbe0	set_duty
+0x0804bbf0	set_current
+0x0804bc00	set_current_brake
+0x0804bc20	set_handbrake
+0x0804bc30	Unknown fault
+0x0804bc40	release_motor_override
+0x0804bc60	Fault Stop
+0x0804bc70	mcif timer
+0x0804bc80	StatCounter
+0x0804bc90	set displays_mode %i
+0x0804bcb0	set_pid_speed
+0x0804bcc0	set_pid_pos
+0x0804bcd0	FAULT_CODE_NONE
+0x0804bce0	FAULT_CODE_OVER_VOLTAGE
+0x0804bcf8	FAULT_CODE_UNDER_VOLTAGE
+0x0804bd14	FAULT_CODE_DRV
+0x0804bd24	FAULT_CODE_ABS_OVER_CURRENT
+0x0804bd40	FAULT_CODE_OVER_TEMP_FET
+0x0804bd5c	FAULT_CODE_OVER_TEMP_MOTOR
+0x0804bd78	FAULT_CODE_GATE_DRIVER_OVER_VOLTAGE
+0x0804bd9c	FAULT_CODE_GATE_DRIVER_UNDER_VOLTAGE
+0x0804bdc4	FAULT_CODE_MCU_UNDER_VOLTAGE
+0x0804bde4	FAULT_CODE_BOOTING_FROM_WATCHDOG_RESET
+0x0804be0c	FAULT_CODE_ENCODER_SPI
+0x0804be24	FAULT_CODE_ENCODER_SINCOS_BELOW_MIN_AMPLITUDE
+0x0804be54	FAULT_CODE_ENCODER_SINCOS_ABOVE_MAX_AMPLITUDE
+0x0804be84	FAULT_CODE_FLASH_CORRUPTION
+0x0804bea0	FAULT_CODE_HIGH_OFFSET_CURRENT_SENSOR_1
+0x0804bec8	FAULT_CODE_HIGH_OFFSET_CURRENT_SENSOR_2
+0x0804bef0	FAULT_CODE_HIGH_OFFSET_CURRENT_SENSOR_3
+0x0804bf18	FAULT_CODE_UNBALANCED_CURRENTS
+0x0804bf38	FAULT_CODE_BRK
+0x0804bf48	FAULT_CODE_RESOLVER_LOT
+0x0804bf60	FAULT_CODE_RESOLVER_DOS
+0x0804bf78	FAULT_CODE_RESOLVER_LOS
+0x0804bf90	FAULT_CODE_FLASH_CORRUPTION_APP_CFG
+0x0804bfb4	FAULT_CODE_FLASH_CORRUPTION_MC_CFG
+0x0804bfd8	FAULT_CODE_ENCODER_NO_MAGNET
+0x0804bff8	FAULT_CODE_ENCODER_MAGNET_TOO_STRONG
+0x0804c020	FAULT_CODE_HALL_SENSOR
+0x0804c038	FAULT_CODE_THROTTLE_VOLTAGE
+0x0804c054	FAULT_CODE_DISPLAY
+0x0804c068	FAULT_CODE_REGEN_VOLTAGE
+0x0804c084	FAULT_CODE_DUALHALL_VOLTAGE
+0x0804c120	Temperature
+0x0804c12c	Time
+0x0804c134	Temp Measured
+0x0804c144	Temp Estimated
+0x0804c154	Sample %d of %d
+0x0804c164	R: %.2f, EST: %.2f
+0x0804c190	foc_ovm: en=%d factor=%.4f svm_margin=%.3f
+0x0804c1bc	Usage: foc_ovm <en 0|1> [factor 1.00..1.15] [svm_margin 0.0..1.0]
+0x0804c200	foc_ovm set: en=%d factor=%.4f svm_margin=%.3f
+0x0804c230	HFI plot enabled
+0x0804c244	HFI plot disabled
+0x0804c258	Value
+0x0804c260	Sample
+0x0804c268	Phase
+0x0804c270	Phase bin2
+0x0804c27c	Ld - Lq (uH
+0x0804c288	L Diff Sat (uH)
+0x0804c298	L Avg (uH)
+0x0804c2a4	Sample Index
+0x0804c2b4	Current (A)
+0x0804c2c0	Inductance (uH)
+0x0804c300	foc pid
+0x0804c310	foc hfi
+0x0804c320	foc timer
+0x0804c330	Index found
+0x0804c33c	Rotated for sync
+0x0804c350	RAD2DEG_f1 %.2f
+0x0804c360	RAD2DEG_f2 %.2f
+0x0804c370	Inversion and ratio detected
+0x0804c390	Enc: %.2f
+0x0804c39c	i %i
+0x0804c3a4	RAD2DEG_f3 %.2f
+0x0804c3b4	RAD2DEG_f4 %.2f
+0x0804c3c4	Avg: %.2f
+0x0804c3d0	Offset detected
+0x0804c3e0	FOC Test Print
+0x0804c3f0	foc_tmp
+0x0804c3f8	[en]
+0x0804c400	Enable HFI plotting. 0: off, 1: DFT, 2: Raw
+0x0804c42c	foc_plot_hfi_en
+0x0804c43c	FOC overmod: foc_ovm [en 0|1] [factor 1.00..1.15] [svm_margin 0.0..1.0]
+0x0804c484	foc_ovm
+0x0804c490	Mod d:     %.2f
+0x0804c4a0	Mod q:     %.2f
+0x0804c4b0	Mod q flt: %.2f
+0x0804c4c0	Duty:      %.2f
+0x0804c4d0	Vd:        %.2f
+0x0804c4e0	Vq:        %.2f
+0x0804c4f0	Phase:     %.2f
+0x0804c500	V_alpha:   %.2f
+0x0804c510	V_beta:    %.2f
+0x0804c520	id:        %.2f
+0x0804c530	iq:        %.2f
+0x0804c540	id_filter: %.2f
+0x0804c550	iq_filter: %.2f
+0x0804c560	id_target: %.2f
+0x0804c570	iq_target: %.2f
+0x0804c580	i_abs:     %.2f
+0x0804c590	i_abs_flt: %.2f
+0x0804c5a0	Obs_x1:    %.2f
+0x0804c5b0	Obs_x2:    %.2f
+0x0804c5c0	vd_int:    %.2f
+0x0804c5d0	vq_int:    %.2f
+0x0804c5e0	off_delay: %.2f
+0x0804c5f0	gpdrive timer
+0x0804c600	virtual motor disconnected
+0x0804c620	virtual motor connected
+0x0804c638	arguments should be 3
+0x0804c650	[ml][J][Vbus]
+0x0804c660	connects virtual motor
+0x0804c678	connect_virtual_motor
+0x0804c690	disconnect virtual motor
+0x0804c6ac	disconnect_virtual_motor
+0x0804c6d0	Age    : %.2f s
+0x0804c6e0	Thread : %s
+0x0804c6ec	Motor  : %i
+0x0804c6f8	Command: %s
+0x0804c730	Print recent motor events
+0x0804c74c	events
+0x0804c760	AIRBORNE
+0x0804c76c	LANDING
+0x0804c774	GROUNDED
+0x0804c780	ON (150ms)
+0x0804c790	  ** clipped - accel in +/-2g mode **
+0x0804c7b8	ON - printing every 150ms
+0x0804c7d4	=== Jump Detection ===
+0x0804c7ec	State      : %s
+0x0804c7fc	Freefall   : %.2f g  (below = airborne)
+0x0804c824	Land thresh: %.2f g  (above = landed)
+0x0804c84c	Min air    : %u ms
+0x0804c860	Lockout    : %u ms
+0x0804c874	Monitor    : %s
+0x0804c884	--- Last jump ---
+0x0804c898	Air time   : %u ms  (target ~610ms for 1.5ft)
+0x0804c8c8	Height     : %u cm  (%.1f ft)
+0x0804c8e8	Peak G     : %.2f g%s
+0x0804c900	Jump count : %u
+0x0804c910	freefall
+0x0804c91c	Freefall threshold -> %.2f g
+0x0804c93c	Invalid: range 0.10 - 1.50 g
+0x0804c95c	land
+0x0804c964	Land threshold -> %.2f g
+0x0804c980	Invalid: range 0.50 - 3.00 g
+0x0804c9a0	minair
+0x0804c9a8	Min air time -> %d ms
+0x0804c9c0	Invalid: range 20 - 500 ms
+0x0804c9dc	lockout
+0x0804c9e4	Lockout -> %d ms
+0x0804c9f8	Invalid: range 100 - 2000 ms
+0x0804ca18	monitor
+0x0804ca20	Monitor %s
+0x0804ca2c	reset
+0x0804ca34	Jump counters reset
+0x0804ca48	Usage: jump [status|freefall <g>|land <g>|minair <ms>|lockout <ms>|monitor on|off|reset]
+0x0804caa4	  Target 1.5ft = ~46cm, ~610ms air time
+0x0804cad0	[status|freefall|land|minair|lockout|monitor|reset] [value]
+0x0804cb0c	Jump detection: jump [status | freefall <g> | land <g> | minair <ms> | lockout <ms> | monitor on|off | reset]
+0x0804cb7c	jump
+0x0804cb90	LANDING 
+0x0804cb9c	APP_ADC
+0x0804cba4	[JUMP] %s | acc=%.2fg ff_t=%ums | air=%ums h=%ucm(%.1fft) pk=%.2fg | #%u | FF<%.2f LND>%.2f MIN=%ums LCK=%ums
+0x0804cc14	[JUMP-PWR] V=%.1fV RPM=%.0f I=%.1fA P=%.2fkW | PhCap=%.0f%% PwrCap=%.0f%% ActiveCap=%.0f%% | Ramp=%.0f%%
+0x0804cc80	bug1
+0x0804cc88	config.safe_start: %i
+0x0804cca0	bug2
+0x0804cca8	bug3
+0x0804ccb0	bug4
+0x0804ccb8	bug5
+0x0804ccc4	Street
+0x0804cccc	Race
+0x0804ccd4	no_rpm
+0x0804ccdc	throttle
+0x0804cce8	temp
+0x0804ccf0	current_cap
+0x0804ccfc	mode_off
+0x0804cd08	gear_zero
+0x0804cd14	hold_diag cleared (#%u)
+0x0804cd2c	hold cap = OFF (using mcconf max = %dA)
+0x0804cd54	hold cap truncated to mcconf max %dA
+0x0804cd7c	hold cap set to %dA (mcconf max = %dA)
+0x0804cda4	hold_diag #%u state=%s tx=%u eng=%u
+0x0804cdc8	  mode=%d(%s) flag=%d.%02d en=%s rpm=%d.%02d thr=%d.%02d i=%d.%02d
+0x0804ce0c	  tM=%d tF=%d zero=%d hot=%d flt=%d seen=%d
+0x0804ce38	  held: pos=%d.%02d
+0x0804ce4c	  rlse: capA=%d.%02d  t=%ums/%dms  post_fade=%dms
+0x0804ce80	  cap=OFF (mcconf max=%dA)  oc=%u ms
+0x0804cea8	  cap=%dA (eff=%dA, mcconf max=%dA)  oc=%u ms
+0x0804ced8	  last:%s>%s(%s) %ums ago
+0x0804cf00	hold
+0x0804cf10	[reset | cap A]
+0x0804cf20	Show hold-mode state, inputs, timers, last transition. Sub: 'reset' clears counters, 'cap N' sets hold phase-current cap to N amps (0 = no app cap, use mcconf max).
+0x0804cfc8	hold_diag
+0x0804cfe0	IDLE
+0x0804cfe8	HELD
+0x0804cff0	RLSE
+0x0804d010	vwheelie
+0x0804d020	spid: SAVED live speed-PID to flash (persists across reboot).
+0x0804d060	spid: SAVE FAILED (flash busy/locked). Values still live in RAM only.
+0x0804d0a8	PID may brake to lower setpoint
+0x0804d0c8	PID drive-only, target<actual coasts
+0x0804d0f0	vwheelie: ENABLED
+0x0804d104	vwheelie: DISABLED
+0x0804d118	defaults
+0x0804d124	vwheelie defaults: start=%d.%02d end=%d.%02d kd=0.%03d
+0x0804d15c	start
+0x0804d164	vwheelie start -> %d.%02d deg
+0x0804d188	vwheelie end   -> %d.%02d deg
+0x0804d1a8	vwheelie kd    -> 0.%03d  (per deg/s)
+0x0804d1d0	spid
+0x0804d1d8	speed PID (live, in-memory; not persisted):
+0x0804d204	  kp           = %s%d.%03d%03d
+0x0804d224	  ki           = %s%d.%03d%03d
+0x0804d244	  kd           = %s%d.%03d%03d
+0x0804d264	  kdfilt       = %s%d.%03d%03d
+0x0804d284	  minerpm      = %d
+0x0804d298	  brake        = %d  (1=PID may brake to lower setpoint, 0=drive-only)
+0x0804d2e0	  ramp_erpms_s = %d
+0x0804d2f4	Set:  vwheelie_diag spid <field> <val>   (kp ki kd kdfilt minerpm brake ramp)
+0x0804d344	Save: vwheelie_diag spid save     (-> flash, persists reboot; releases motor briefly)
+0x0804d39c	Undo: vwheelie_diag spid revert   (reload stored flash, discard live edits)
+0x0804d3e8	save
+0x0804d3f0	revert
+0x0804d3f8	spid: reverted to stored flash config (live edits discarded).
+0x0804d438	spid kp           -> %s%d.%03d%03d
+0x0804d45c	spid ki           -> %s%d.%03d%03d
+0x0804d480	spid kd           -> %s%d.%03d%03d
+0x0804d4a4	kdfilt
+0x0804d4ac	spid kdfilt       -> %s%d.%03d%03d
+0x0804d4d0	minerpm
+0x0804d4d8	spid minerpm      -> %d
+0x0804d4f0	spid brake: expected 0|1|on|off|true|false
+0x0804d51c	spid brake        -> %d  (%s)
+0x0804d53c	ramp
+0x0804d544	spid ramp_erpms_s -> %d
+0x0804d55c	spid: unknown field '%s'. Try: kp ki kd kdfilt minerpm brake ramp
+0x0804d5a0	Usage: vwheelie_diag spid                (print all live values)
+0x0804d5e4	       vwheelie_diag spid <field> <val>  (set one field)
+0x0804d620	       vwheelie_diag spid save           (persist live values to flash)
+0x0804d668	       vwheelie_diag spid revert         (reload stored flash, discard edits)
+0x0804d6b8	vwheelie_diag #%u  running=%d  enabled=%d  active=%d
+0x0804d6f0	  params: start=%d.%02d end=%d.%02d kd=0.%03d
+0x0804d720	  live:   pitch=%d.%02d deg  rate=%d.%02d deg/s
+0x0804d750	  out:    gain=%d.%02d  damper=%d.%02d
+0x0804d778	  motor:  took_over=%d  cap_erpm=%d  target_erpm=%d  brake_rel=%d.%02d
+0x0804d7c0	  speed-PID tuning -> 'vwheelie_diag spid'  (list/edit kp ki kd kdfilt minerpm brake ramp + save)
+0x0804d830	[on|off|start D|end D|kd K|defaults|spid|spid field val|spid save|spid revert]
+0x0804d880	Show pitch-controlled wheelie limiter state, params, and live snapshot. Sub: 'on'/'off' toggle enable, 'start <deg>' set start angle, 'end <deg>' set end angle, 'kd <val>' set pitch-rate gain, 'defaults' restore Vedder's defaults. SPEED-PID tuning: 'spid' lists ALL live speed-PID fields with values; 'spid <field> <val>' edits one in-memory (kp ki kd kdfilt minerpm brake ramp); 'spid save' persists to flash; 'spid revert' reloads stored flash.
+0x0804da40	vwheelie_diag
+0x0804da50	uartcomm proc
+0x0804da60	braking
+0x0804da68	no braking
+0x0804da80	APP_Control
+0x0804da90	Altis BMS HB
+0x0804daa8	altis_diag: counters reset.
+0x0804dac4	=== ALTIS DIAG ===
+0x0804dad8	battery_series=%d (Altis active=%s)
+0x0804dafc	hb thread running=%s  loops=%u  hb100=%u  hb500=%u
+0x0804db30	CAN2 tx_ok=%u  tx_fail=%u  rx=%u
+0x0804db54	CAN2 ESR=0x%08lX  TEC=%lu  REC=%lu  LEC=%lu (%s)  EWGF=%d  EPVF=%d  BOFF=%d
+0x0804dba0	CAN2 BTR=0x%08lX  (expect 0x%08lX for 250k)
+0x0804dbd0	[reset]
+0x0804dbd8	Print Altis CAN2 heartbeat + CAN2 bus diagnostics. Pass 'reset' to zero the counters.
+0x0804dc30	altis_diag
+0x0804dc40	NoErr
+0x0804dc48	Stuff
+0x0804dc50	Form
+0x0804dc5c	BitRec
+0x0804dc64	BitDom
+0x0804dcd0	DETECTED
+0x0804dcdc	NONE
+0x0804dce4	Testing
+0x0804dcec	BMI270 - Roll: %d.%02d | Pitch: %d.%02d | Relative Pitch: %d.%02d | Fast Change Detected: %s | Correction: %d.%02d | Return: %d.%02d | Final Result: %d.%02d
+0x0804dd8c	Street Stored Regen: %d.%02d | Race Stored Regen: %d.%02d | Over ABS Multiplier: %d.%02d
+0x0804dde8	Screen Data -- Reported Angle (Float): %f | v6strg: %d.%02d
+0x0804de24	485_ok
+0x0804de34	Print the number d
+0x0804de48	life_test
+0x0804de54	io_test
+0x0804de5c	encoder-test
+0x0804de70	Start BMI270 Print
+0x0804de84	BMI270_Start
+0x0804de94	Stop BMI270 Print
+0x0804dea8	BMI270_Stop
+0x0804deb4	Resets the Horizon
+0x0804dec8	BMI270_ResetHorizon
+0x0804def0	Ultrabee Display Thread
+0x0804df08	Gives the current status for the ultrabee display
+0x0804df40	Ultrabee Display Status: Good
+0x0804df60	Digiwise Display
+0x0804df80	SW102T Display
+0x0804df90	Display Setting
+0x0804dfa0	Bonnell Display
+0x0804dfb0	Traction Control
+0x0804dfc4	LDLQ ADV DEBUG | enable=%d | rpmMin=%d | rpmMax=%d | idiqMin=%d.%03d
+0x0804e010	=== TC Diagnostic ===
+0x0804e028	  live: cut=%u  motoring=%u  pending=%lums  scale=%d%%  eng_total=%lu  rel_total=%lu
+0x0804e080	  motor: RPM=%d  duty=%d%%  current=%dA  rise=%ld/s  limit=%ld/s  peak=%ld/s  pp=%d
+0x0804e0d4	  tune: base=%ld/s  gain=%ld/s  duty=%d%%  rpm=%d  current=%dA  mode=%d  strength=%d%%  pp=%d
+0x0804e134	        Street: str=%d%% en=%d slip=%d   Race: str=%d%% en=%d slip=%d   TC_active=%d
+0x0804e18c	        eff_off=%d%%  eff_min=%d%%  eff_cut=%d%%  rel=%d%%  confirm=%lums
+0x0804e1e0	tcstrength: mode=%d  active=%d%%  (~89=current, 0=80%% weaker, 100=10%% stronger)
+0x0804e234	            Street=%d%%(en=%d slip=%d)  Race=%d%%(en=%d slip=%d)
+0x0804e278	            ref_off=%d%%  ref_min=%d%%  ref_cut=%d%%
+0x0804e2b0	            eff_off=%d%%  eff_min=%d%%  eff_cut=%d%%
+0x0804e2e8	tcstrength: range [0, 100]%%
+0x0804e308	tcstrength: mode=%d  active=%d%%  ref_off=%d%%  ref_min=%d%%  ref_cut=%d%%
+0x0804e354	tcstrength: mode range [1, 2] (1=Street, 2=Race)
+0x0804e388	tcstrength: mode%d=%d%%  active_mode=%d  active=%d%%
+0x0804e3c0	Usage: tcstrength [<0-100>] | [<mode 1-2> <0-100>]  (1=Street, 2=Race)
+0x0804e410	tcerpm: base=%ld/s  gain=%ld/s  off=%d%%  duty=%d%%  rpm=%d  current=%dA  mode=%d  pp=%d
+0x0804e46c	        strength=%d%%  ref_off=%d%%  ref_min=%d%%  ref_cut=%d%%
+0x0804e4ac	        live: cut=%u  scale=%d%%  RPM=%d  duty=%d%%  current=%dA  rise=%ld/s  limit=%ld/s
+0x0804e508	Usage: tcerpm base/gain <rpm/s> | off/duty/minscale/cutstep/relstep/strength <pct> | rpm/current <value> | confirm <ms> | reset
+0x0804e588	tcerpm: reset to defaults (mechanical RPM, pp=%d)
+0x0804e5bc	base
+0x0804e5c4	tcerpm: base range [0, 200000]
+0x0804e5e4	tcerpm: base=%ld/s
+0x0804e5f8	gain
+0x0804e600	tcerpm: gain range [0, 200000]
+0x0804e620	tcerpm: gain=%ld/s
+0x0804e634	tcerpm: off range [1, 100]%%
+0x0804e654	tcerpm: ref_off=%d%%  eff_off=%d%%
+0x0804e678	tcerpm: duty range [0, 100]%%
+0x0804e698	tcerpm: duty=%d%%
+0x0804e6ac	tcerpm: rpm range [0, 200000]
+0x0804e6cc	tcerpm: rpm=%d
+0x0804e6dc	erpm
+0x0804e6e4	tcerpm: erpm range [0, 200000]
+0x0804e704	tcerpm: erpm=%d -> rpm=%d (pp=%d)
+0x0804e728	tcerpm: current range [0, 1000]A
+0x0804e74c	tcerpm: current=%dA
+0x0804e760	minscale
+0x0804e76c	tcerpm: minscale range [0, 100]%%
+0x0804e790	tcerpm: ref_min=%d%%  eff_min=%d%%
+0x0804e7b4	cutstep
+0x0804e7bc	tcerpm: cutstep range [0, 100]%%
+0x0804e7e0	tcerpm: ref_cut=%d%%  eff_cut=%d%%
+0x0804e804	relstep
+0x0804e80c	tcerpm: relstep range [0, 100]%%
+0x0804e830	tcerpm: relstep=%d%%
+0x0804e848	strength
+0x0804e854	tcerpm: strength range [0, 100]%%
+0x0804e878	tcerpm: mode=%d  strength=%d%%  eff_off=%d%%  eff_min=%d%%  eff_cut=%d%%
+0x0804e8c4	confirm
+0x0804e8cc	tcerpm: confirm range [1, 1000]ms
+0x0804e8f0	tcerpm: confirm=%lums
+0x0804e908	tcerpm: unknown param '%s'
+0x0804e924	        params: base gain off duty rpm current minscale cutstep relstep strength confirm reset
+0x0804e984	tcerpm: Usage: tcerpm <param> <value> | tcerpm reset
+0x0804e9c0	tc_monitor: %s
+0x0804e9f7	 no-op
+0x0804ea00	tc_monitor: already off (compiled out)
+0x0804ea28	Usage: tc_monitor (status only; prints are compiled out)
+0x0804ea70	[base|gain <rpm/s>] | [off|duty|minscale|cutstep|relstep <pct>] | [rpm|current <value>] | [confirm <ms>] | [reset]
+0x0804eae4	Sensorless TC tuning (mechanical RPM): tcerpm | base/gain/off/duty/rpm/current/minscale/cutstep/relstep/confirm | reset
+0x0804eb5c	tcerpm
+0x0804eb64	One-shot TC diagnostic: RPM, duty, current, rise-rate, state
+0x0804eba4	tcdiag
+0x0804ebac	[<pct>] | [<mode 1-2> <pct>]
+0x0804ebcc	Sensorless TC strength slider by bike mode: tcstrength [<pct>] | [<mode> <pct>]  (1=Street, 2=Race)
+0x0804ec30	tcstrength
+0x0804ec3c	[on|off]
+0x0804ec48	Enable/disable TC diagnostic prints. Off by default. Usage: tc_monitor | tc_monitor on | tc_monitor off
+0x0804ecb0	tc_monitor
+0x0804ece0	MPU9250
+0x0804ece8	MPU9150
+0x0804f1a9	0!.w
+0x0804f1db	0!.}
+0x0804f1f7	0!.{
+0x0804f225	0!.{
+0x0804f245	0!.w
+0x0804f31b	0!.|
+0x0804f347	0!.}
+0x0804f4a1	0-.{
+0x0804f4ed	0!.~
+0x0804f51f	_!.~
+0x0804f5e1	/!.x
+0x0804f73b	0!.y
+0x0804f78f	0'.x
+0x0804f82d	0-/!.|
+0x0804f871	0!.|
+0x0804f883	/!.}
+0x0804fc0b	0l/cP
+0x080503bd	RS<R@@@K
+0x080504ab	0!.w
+0x080504e5	P!.{
+0x08050bbb	B#3K
+0x08050d40	CYC_COMM_RESULT_UNKNOWN
+0x08050d60	CYC_COMM_RESULT_SUCCESS
+0x08050d78	CYC_COMM_RESULT_FAILED
+0x08050d90	CYC_COMM_RESULT_UNAUTHORIZED
+0x08050db0	CYC_COMM_RESULT_FORBIDDEN
+0x08050dcc	CYC_COMM_RESULT_NOT_FOUND
+0x08050de8	CYC_COMM_RESULT_TIMEOUT
+0x08050e00	CYC_COMM_RESULT_ALREADY_EXISTED
+0x08050e20	CYC_COMM_RESULT_SERVER_ERROR
+0x08050e40	SEPARATOR
+0x08050e4c	OWNER
+0x08050e80	uuid
+0x08050e88	uuid_test: %08X 
+0x08050e9c	register_user
+0x08050eac	register_user: failed
+0x08050f02	user_name: %s
+0x08050f10	login
+0x08050f18	login: failed
+0x08050f28	login: succeeded, %s %s %08X
+0x08050f48	logout
+0x08050f50	logout: %s
+0x08050f5c	update_user
+0x08050f68	update_user: %s
+0x08050f78	delete_user
+0x08050f84	delete_user: %s
+0x08050f94	delete_all_user
+0x08050fa4	delete_all_user: %s
+0x08050fb8	user_list
+0x08050fc4	user_list: %i
+0x08051003	name: %s
+0x0805100c	sizeof_user
+0x08051018	sizeof_user: %d
+0x08051028	sizeof_users
+0x08051038	sizeof_users: %d
+0x0805104c	all_user_count
+0x0805105c	all_user_count: %d
+0x08051070	custom_user_count
+0x08051084	custom_user_count: %d
+0x0805109c	all_user_group_count
+0x080510b4	all_user_group_count: %d
+0x080510d0	  uuid test, get_stm32_uuid()
+0x080510f0	  user_name password NONE|FACTORY|OWNER|GUEST|DEMO
+0x08051124	  user_name password
+0x0805113c	  old_user_name old_password new_user_name new_password
+0x08051174	  user_name password be_deleted_user_name
+0x080511a0	  delete all user
+0x080511b4	  list all user
+0x080511c4	  size of user_t
+0x080511d8	  size of backup_data.users
+0x080511f4	  all user count
+0x08051208	  custom user count
+0x0805121c	  all user group count
+0x0805125f	3sqrt
+0x08051270	acosf
+0x08051280	asinf
+0x08051290	expf
+0x080512a0	fmodf
+0x080512b0	logf
+0x080512c0	powf
+0x080512d0	sqrtf
+0x08051734	inity
+0x080517c0	0123456789abcdef
+0x080517d4	0123456789ABCDEF
+0x080517e8	(null)
+0x080517f0	                0000000000000000e%ld
+0x08051964	Infinity
+0x08051a84	POSIX
+0x08051b1c	vH7B
+0x08051b4c	W4vC
+0x08052626	ASCII
+0x08052646	ASCII

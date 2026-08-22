@@ -46,8 +46,19 @@ Using the CAN command reference in [02-ebmx-can-protocol.md](02-ebmx-can-protoco
 #   71 00 5E 4E B0 02 00 00 00 00 00 00 00
 ```
 
-Verified live: both mode paths flip the reported mode (`tcstrength` shows `mode=1/2`) over
-Bluetooth, motor parked. Assist and the alternate families inject the same way.
+**Verified live (2026-08-22), motor parked — use the handlebar `0x03003203` path:**
+
+- **`0x03003203` `data[0]=1/2`** switches the mode *fully* — it moves both the ride-mode flag
+  (`tcstrength` shows `mode=1/2`) **and** the display byte (prints `set displays_mode 0/1`). This
+  is the one to use; it emulates the physical handlebar button.
+- **`0x5E4EA3` `data[6]=mode` is flag-only.** It changes `tcstrength` but **not** the displayed/
+  reported mode (its `set_displays_mode` call is gated). Don't rely on it for a real mode switch.
+- **Assist `0x03003201` `data[0]=level`, `data[1]=0xE4`** sets the 40/70/100 % power scale.
+- The `0x03______` priority prefix is required; the un-prefixed `0x0000____` form is ignored.
+
+Reverse (and any motion) needs a **native VESC motor command**, not the injector: `SET_DUTY`
+(id 5) at a small negative duty gives a slow reverse creep. Note **`SET_RPM` (id 8) is repurposed**
+on this build and won't drive the motor — see [`../reference/comm-handlers.md`](../reference/comm-handlers.md).
 
 ## The stub
 

@@ -90,3 +90,29 @@ display/telemetry path — **not** by any write gate and **not** by the battery-
   left `BMS_GET_VALUES`(96) unchanged (all zeros). EBMX omitted VESC-BMS CAN ingestion — confirms
   the controller ingests no BMS data over CAN, regardless of `bms.type`. (The injector delivered
   the frames faithfully; the firmware simply has no decoder for them.)
+
+---
+
+## E. Verified control commands (2026-08-22, via the cmd-113 injector)
+
+Bench-verified which ext-id actually switches the bike (not just the internal flag):
+
+- **Ride mode → handlebar node `0x03003203`, `data[0] = 1` (Street) / `2` (Race).** This is the
+  command to use. It calls `set_displays_mode` directly, moving **both** the ride-mode flag
+  (`0x2001c8c0`, read by `tcstrength`) **and** the display byte (`0x1000000c`). Confirmed live: it
+  prints `set displays_mode 0/1` and flips `tcstrength mode=`.
+  - ⚠️ **`0x5E4EA3` is flag-only.** It sets `0x2001c8c0` (so `tcstrength` changes) but its
+    `set_displays_mode` call is behind a gate (`FUN_080350b0`) that stays shut over injection, so
+    the **displayed/reported** mode does not change. Use `0x03003203` for a real mode switch.
+  - The un-prefixed `0x00003203` does **not** reach the handler over injection — the `0x03______`
+    priority prefix is required.
+- **Assist level → handlebar node `0x03003201`, `data[0] = level`, `data[1] = 0xE4`.** Writes the
+  assist/torque scale `0x20001040`. Firmware float table (from `FUN_08036f80`): level `1`→**0.40**,
+  `2`→**0.70**, `3`→**1.00** (0=15.0 anomalous, 4=−1.0 sentinel). i.e. the levels are **40/70/100 %
+  power caps**; 100 % is the resting default, so only the lower levels are noticeably different.
+- **Reverse → native VESC `SET_DUTY` (COMM id 5), small negative duty** (e.g. −5 % = slow creep).
+  There is no dedicated reverse command in the firmware; `SET_DUTY`/`SET_CURRENT` (real
+  `mc_interface_set_*` handlers) drive the motor directly and are not overridden at rest.
+  **`SET_RPM` (COMM id 8) is repurposed** on this build — its handler (`0x0801c124`→`0x08021d40`)
+  doesn't set speed; it float-range-checks and calls the mode/display broadcast (`0x0801ab80`), so
+  sending it does nothing to the motor and perturbs the ride mode. See `comm-handlers.md`.

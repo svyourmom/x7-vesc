@@ -1,0 +1,24 @@
+# --- deploy key / secrets (NEVER commit) ---
+id_ed25519
+id_ed25519.pub
+known_hosts
+*.pem
+*.key
+
+# --- firmware binaries / dumps (copyright; keep your own dump private) ---
+*.bin
+*.elf
+*.hex
+*.img
+firmware/
+dumps/
+
+# --- Python ---
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# --- OS ---
+.DS_Store
+Thumbs.db

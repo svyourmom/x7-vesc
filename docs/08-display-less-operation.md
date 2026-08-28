@@ -9,6 +9,22 @@ This document shows that the controller does not *require* the display — you c
 the bike entirely over Bluetooth, using the CAN-RX injector from
 [06-mods-mode-over-ble.md](06-mods-mode-over-ble.md).
 
+**This is a combined hardware + software mod:**
+1. **Software** — the CAN-RX injector firmware patch ([06](06-mods-mode-over-ble.md)), so a BLE
+   packet becomes a synthetic CAN frame the controller processes.
+2. **Hardware** — physically disconnect the SW102T display from the handlebar bus, so nothing
+   competes with your injected level frames (see "why it fights you" below).
+
+**The display can be reconnected as a backup.** The two states are cleanly exclusive:
+- **Display disconnected** → the app is the sole level source; it fully controls gear + mode.
+- **Display reconnected** → the display wins the level race again (it re-broadcasts every ~20–35 ms),
+  so it retakes gear + mode and the app falls back to *reading* level/mode (still settable: mode
+  injection sticks; level injection is transient). Nothing needs re-flashing to switch — the
+  injector firmware is inert unless you send it frames, so a reconnected display just works.
+
+So the practical rig is: injector firmware flashed permanently, display on a connector you can pull.
+Pulled = app cockpit; plugged = stock handlebar control as a hardwired fallback if Bluetooth fails.
+
 > ⚠️ Firmware-mod territory and a **moving vehicle**. Read [05](05-flashing-over-ble.md) and
 > [06](06-mods-mode-over-ble.md) first. Keep the wheel off the ground for every test here. Own the
 > hardware you do this to.
@@ -110,6 +126,12 @@ cycle boots back to level 0 (OFF) with no way up. If you want the bike drivable 
 put a small always-on CAN node where the display was, broadcasting `0x5E4EB0 data[0]=3` on a timer.
 That boots the bike to a known gear over the wire; the app then injects to override the level and
 mode when it is connected. Hardware sets a safe default, software takes over on demand.
+
+The **simplest** fallback needs no new hardware at all: leave the SW102T display on a connector and
+plug it back in. A reconnected display re-takes gear + mode over the wire, so a dead phone or
+BLE stack still leaves you a fully functional bike. The trade-off vs. a dedicated CAN node is that
+the display re-imposes its own boot level (0/OFF) and button behaviour; the CAN node lets you pick
+the boot gear.
 
 ## Safety notes specific to this
 

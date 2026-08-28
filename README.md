@@ -15,8 +15,10 @@ interface and from a dump of its own firmware. The goal is **documentation and i
 - It advertises as **`CYCMOTOR`** over the **Nordic UART Service** and speaks the standard **VESC
   packet protocol** — **unpaired and unauthenticated**. Any BLE central can read values, run
   terminal commands, and read/write configuration.
-- The bike's controls (**ride mode**, **assist level**) reach the controller as **EBMX-proprietary
-  CAN frames** from the handlebar module — documented here.
+- The bike's controls (**ride mode**, **gear/level**) come from the **SW102T display** as
+  **EBMX-proprietary CAN frames** — documented here. Gear + mode are **readable over BLE**
+  (`GET_VALUES_SELECTIVE`), and with the display removed the bike can be **driven entirely from
+  Bluetooth** ([docs/08](docs/08-display-less-operation.md)).
 - Firmware update over BLE is the **stock VESC OTA flow** with a **CRC-16 check only (no
   signature)**, so the controller will accept and run a user-built firmware image.
 
@@ -31,6 +33,7 @@ interface and from a dump of its own firmware. The goal is **documentation and i
 | [docs/05-flashing-over-ble.md](docs/05-flashing-over-ble.md) | the OTA flash flow, flash map, and the "no signature" finding |
 | [docs/06-mods-mode-over-ble.md](docs/06-mods-mode-over-ble.md) | how-to: control ride mode from Bluetooth (a small firmware patch) |
 | [docs/07-firmware-map-full.md](docs/07-firmware-map-full.md) | **the full firmware map** — memory globals, dispatch tables, subsystems, addresses |
+| [docs/08-display-less-operation.md](docs/08-display-less-operation.md) | **how-to: drive from Bluetooth with the display removed** — read/set gear + mode, current-limit scale, app-as-cockpit |
 | [reference/](reference/) | firmware analysis: function inventory + command/dispatch maps + protocol decodes (logic, not code) |
 | [tools/](tools/) | Python tools: BLE VESC client, firmware uploader |
 | [hardware/](hardware/) | teardown / hardware notes (WIP) |

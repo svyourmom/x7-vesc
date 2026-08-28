@@ -32,13 +32,21 @@ else → Race(2)). This is the same effect as the physical mode button.
 
 A second protocol path to the mode (the firmware honours both).
 
-### Assist level — `0x5E4EB0`
-Sets the assist / power scale and two mode flags.
+### Level / gear — `0x5E4EB0`
+Selects the **gear/level** — this is what the display's up/down buttons send. It is the
+gear selector, not a separate "assist" axis.
 
-| byte | field |
-|---|---|
-| `data[0]` | level selector → internal power scale: `1`→0.40, `2`→0.70, `3`→1.00, `0`→special, `0xFF`→disabled/sentinel |
-| `data[1]` | bit0 → an associated flag; bit1 → enable/disable an associated subsystem |
+| `data[0]` | level | internal float |
+|---|---|---|
+| `0xFF` | **Reverse** | `-1.0` |
+| `0x00` | neutral / 0 (OFF) | `15.0` (sentinel) |
+| `0x01` | gear 1 | `0.4` |
+| `0x02` | gear 2 | `0.7` |
+| `0x03` | gear 3 | `1.0` |
+
+`data[1]` carries associated flag bits. The level is readable over Bluetooth on
+`GET_VALUES_SELECTIVE` bit 25, and — with the display removed — settable by injecting this frame;
+see [08-display-less-operation.md](08-display-less-operation.md).
 
 ### Assist level — `0x07003201` and `0x03003201` (alternates)
 | byte | field |

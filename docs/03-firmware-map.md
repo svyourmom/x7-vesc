@@ -13,7 +13,7 @@ redistributed.
 |---|---|
 | `0x2001c8c0` | ride-mode flag (`0` = Street, non-zero = Race) |
 | `0x1000000c` | display ride-mode byte (CCM RAM) |
-| `0x20001040` | assist / power scale (set by the assist-level CAN commands) |
+| `0x20001040` | **level/gear float** (set by the `0x5E4EB0` / `0x030032xx` display frames); read via `FUN_08036300` → selective bit 25 |
 | `0x2000b4c8 + 0x354` | **displayed battery/SoC value** (float, low-pass filtered) |
 | `0x2000b0c0[0x0b]` | the pre-filter source for the SoC value (controller-internal ADC path) |
 | `0x2000ac54..ac88` | decoded accessory-telemetry channels (temps + analog; see CAN doc) |

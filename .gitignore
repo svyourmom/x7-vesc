@@ -12,6 +12,8 @@ known_hosts
 *.img
 firmware/
 dumps/
+build/          # build-canrx-fw.py output
+my_baseline.bin # downloaded baseline image
 
 # --- Python ---
 __pycache__/

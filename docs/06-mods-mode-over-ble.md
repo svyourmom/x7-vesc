@@ -66,11 +66,13 @@ The stub is ~30 Thumb-2 instructions that mirror the controller's own CAN-RX enq
 mutex, write a 20-byte frame entry — flags/DLC, extended ID, data bytes — bump the write index,
 unlock, signal the dispatch thread, return). Source: [`../tools/canrx_stub.s`](../tools/canrx_stub.s).
 
-Building the patched image is straightforward: assemble the stub with `arm-none-eabi-as`/`ld` at
-its load address, write it plus the 4-byte trampoline and the 2-byte jump-table edit into a copy of
-your firmware dump, then flash with [`vesc-fw-upload.py`](../tools/vesc-fw-upload.py). Addresses are
-build-specific — verify against your own dump (disassemble to confirm the trampoline lands in
-inter-function padding and the jump-table math is right) before flashing.
+Building the patched image (assemble the stub, drop it into a copy of your own firmware, add the
+trampoline and the jump-table edit, then flash) is scripted end to end in
+[09-build-custom-firmware.md](09-build-custom-firmware.md) with
+[`tools/build-canrx-fw.py`](../tools/build-canrx-fw.py). Addresses are build-specific — the script
+refuses any image that is not the known build, and you still verify against your own dump
+(disassemble to confirm the trampoline lands in inter-function padding and the jump-table math is
+right) before flashing.
 
 ## Why it can't (yet) put BMS SoC on the display
 

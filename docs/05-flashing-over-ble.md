@@ -26,9 +26,16 @@ area and write the raw bytes you send. Validation happens in the resident bootlo
 
 | region | address |
 |---|---|
-| running application | `0x08000000` (~384 KB) |
-| new-app staging | `0x08080000` (sectors 8–10) |
+| running application | `0x08000000` (~384 KB, ends ~`0x0805FFF8`) |
+| new-app staging | high sectors above the app (see note) |
 | resident bootloader | `0x080E0000` |
+
+> **Staging base — build-derived, confirm against your own dump.** The full map
+> ([07-firmware-map-full.md](07-firmware-map-full.md) §10) reads the `WRITE_NEW_APP_DATA` target as
+> `0x08060000` with the erase clearing sectors at `0x08080000`/`0x080A0000`/`0x080C0000`; earlier
+> notes said `0x08080000`. The exact base does **not** affect flashing — the host sends chunks from
+> offset 0 and the firmware places them — so it matters only for reading the flash map. Confirm the
+> real base from your own disassembly if you care about the exact sector.
 
 ## Wire format (matches `vesc_tool`)
 

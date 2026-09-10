@@ -12,6 +12,8 @@ known_hosts
 *.img
 firmware/
 dumps/
+build/          # build-canrx-fw.py output
+my_baseline.bin # ota-extract.py default output
 
 # --- Python ---
 __pycache__/

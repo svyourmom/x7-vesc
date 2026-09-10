@@ -34,8 +34,9 @@ interface and from a dump of its own firmware. The goal is **documentation and i
 | [docs/06-mods-mode-over-ble.md](docs/06-mods-mode-over-ble.md) | how-to: control ride mode from Bluetooth (a small firmware patch) |
 | [docs/07-firmware-map-full.md](docs/07-firmware-map-full.md) | **the full firmware map** — memory globals, dispatch tables, subsystems, addresses |
 | [docs/08-display-less-operation.md](docs/08-display-less-operation.md) | **how-to: drive from Bluetooth with the display removed** — read/set gear + mode, current-limit scale, app-as-cockpit |
+| [docs/09-build-custom-firmware.md](docs/09-build-custom-firmware.md) | **how-to: build + flash the injector firmware end to end** — get your own baseline, patch it, flash it |
 | [reference/](reference/) | firmware analysis: function inventory + command/dispatch maps + protocol decodes (logic, not code) |
-| [tools/](tools/) | Python tools: BLE VESC client, firmware uploader |
+| [tools/](tools/) | Python tools: BLE VESC client, firmware uploader, patch builder |
 | [hardware/](hardware/) | teardown / hardware notes (WIP) |
 
 ## Safety & legal

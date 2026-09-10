@@ -6,8 +6,10 @@ controller (as used on modified Talaria / Sur-Ron-class ebikes). Companion to th
 — part of an open collection of ebike how-tos, teardowns, and mods.
 
 Everything here was produced from a controller the author owns, over its own Bluetooth
-interface and from a dump of its own firmware. The goal is **documentation and interoperability**
-(talk to the hardware you own), in the spirit of right-to-repair.
+interface, and from analysis of the controller's official firmware image (published at
+[CYC-EBMX-Development/firmware](https://github.com/CYC-EBMX-Development/firmware); not mirrored
+here). The goal is **documentation and interoperability** (talk to the hardware you own), in the
+spirit of right-to-repair.
 
 ## TL;DR — what the X-9000 exposes
 

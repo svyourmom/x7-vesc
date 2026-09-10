@@ -4,7 +4,7 @@ This is the full path from a stock controller to one running the **CAN-RX inject
 ([06-mods-mode-over-ble.md](06-mods-mode-over-ble.md)) that lets x7 control ride mode and gear over
 Bluetooth. It ties together the pieces the other docs describe:
 
-1. **Step 0 — get your own baseline image** (capture the official update).
+1. **Step 0 — get the official baseline image** (download it).
 2. **Step 1 — assemble the stub.**
 3. **Step 2 — build the patched image** with `tools/build-canrx-fw.py`.
 4. **Step 3 — check it.**
@@ -22,42 +22,22 @@ Bluetooth. It ties together the pieces the other docs describe:
 
 ---
 
-## Step 0 — get your own baseline image
+## Step 0 — get the official baseline image
 
-You need a copy of the firmware your controller runs today, to patch. You **cannot read it back
-over Bluetooth**: the only memory-read command on this build targets the BLE module, not the main
-STM32 flash ([07-firmware-map-full.md](07-firmware-map-full.md) §10). So the practical way to get a
-baseline is to **capture the official update** the vendor app performs and reassemble the bytes it
-sends.
+You need a copy of the official firmware to patch. Official X-9000 / CYC images are published in the
+**[CYC-EBMX-Development/firmware](https://github.com/CYC-EBMX-Development/firmware)** repository —
+download the image for your controller from there. (You do not need to, and on this build cannot,
+pull the running firmware off your own controller over Bluetooth: the only memory-read command
+targets the BLE module, not the main STM32 flash — [07-firmware-map-full.md](07-firmware-map-full.md)
+§10.)
 
-The vendor app flashes over the same VESC upload flow this controller exposes (`ERASE_NEW_APP` /
-`WRITE_NEW_APP_DATA`, [05](05-flashing-over-ble.md)). Capture that traffic on Android:
-
-1. On the phone that runs the vendor app: enable **Developer options**, turn on **Bluetooth HCI
-   snoop log**, then toggle Bluetooth off/on so the log starts fresh.
-2. In the vendor app, run a firmware update against the controller (or re-flash the same version).
-   Let it finish.
-3. Pull the log. Depending on the phone it is at
-   `/sdcard/Android/data/.../files/btsnoop_hci.log` or retrieved via
-   `adb bugreport` (look for `btsnoop_hci.log` inside). Developer options shows the exact path.
-4. Reassemble the image:
-
-   ```bash
-   python3 tools/ota-extract.py btsnoop_hci.log -o my_baseline.bin -v
-   ```
-
-   It finds the `WRITE_NEW_APP_DATA` chunks on the Nordic UART channel, orders them by offset, drops
-   the 6-byte staging header, and writes the raw firmware. It prints the size and md5.
-
-If your app downloads a firmware **file** from the vendor's server instead (over HTTPS), capturing
-that download (e.g. with a TLS-intercepting proxy you control) is an alternative — the exact
-mechanism depends on your app, so treat "capture whatever your app actually transfers" as the
-general idea. Either way the result is your private baseline `.bin`.
+This repo does **not** mirror those files; it points at the official source and works on the copy
+you download.
 
 > The addresses this repo documents were derived from one specific build,
 > **`X9KV3_260714`** (393208 bytes, md5 `5748c5d5ecd3456da81c96afbc31c06b`). The build script
-> checks your baseline against that fingerprint (see Step 2). A different build needs its addresses
-> re-derived.
+> checks your download against that fingerprint (see Step 2) and refuses anything else, so grab the
+> matching build. A different build needs its addresses re-derived.
 
 ---
 

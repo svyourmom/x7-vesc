@@ -156,6 +156,12 @@ implemented) — e.g. repoint an unused COMM id at a handler writing `0x2001c8c0
 - Jump/wheelie/hold control paths into torque — for safety, not for enabling.
 - Bootloader-reflash feasibility check (design only): confirm `JUMP_TO_BOOTLOADER` + app-write
   work over this BLE link before attempting a patch.
+- **[NEW, from the vendor app]** The resident-bootloader field-update protocol is now decoded
+  (73 → 81 → 3), the resident link address `0x080E0000` is confirmed, and a replay-based recovery
+  tool exists — see [10-bootloader-over-ble.md](10-bootloader-over-ble.md). Still open: exactly what
+  id 73 erases and what copies staging→`0x080E0000` (needs the erase/write handler disassembly at
+  `0x0801ba78`/`0x0801ba4e`), plus the app's `ENCRYPTED_SIZE` header field and its
+  "bootloader cannot be verified" check.
 
 ## 9. Artifacts
 See `reference/` — `README.md`, `functions.csv` (full inventory), `comm-handlers.md`,
@@ -182,7 +188,7 @@ All VESC upload COMM ids are **implemented** and reachable over the NUS channel:
 |---|---|---|
 | running **app** | `0x08000000` | our image (~384 KB, ends ~`0x0805FFF8`) |
 | **new-app staging** | `0x08060000` | `WRITE_NEW_APP_DATA` target; erase clears `0x08080000/0A0000/0C0000` → staging spans ~`0x08060000–0x080DFFFF` |
-| **bootloader** | `0x080E0000` | resident, field-updatable; **NOT in our .bin** |
+| **bootloader** | `0x080E0000` | resident, field-updatable; **NOT in our .bin**. **Link address now confirmed**: the vendor app's own bootloader image (from `boot_loader.json`) reset-vectors to `0x080E04F0` — see [10-bootloader-over-ble.md](10-bootloader-over-ble.md). |
 
 **Signature question — undecided at the app level.** The app stages any bytes without checking;
 whatever validation exists (CRC-only in stock VESC, or an added signature/model lock) lives in the
@@ -192,9 +198,17 @@ signature-vs-CRC-only requires an **SWD dump of `0x080E0000`** (bench), or an em
 
 **Risk model:** stock VESC bootloader validates the staged image (size+CRC) **before** copying
 staging→app; a rejected image leaves the running app intact (recoverable, just "update didn't
-take"). Real brick paths: power loss during the copy window, `ERASE_BOOTLOADER` (never send id 73),
-or a modified bootloader that doesn't validate-before-copy (unknown until dumped). Recovery from a
-brick = ST-Link over the STM32 SWD pads (open the controller).
+take"). Real brick paths: power loss during the copy window, or a modified bootloader that doesn't
+validate-before-copy (unknown until dumped). Recovery from a brick = ST-Link over the STM32 SWD pads
+(open the controller).
+
+**On `ERASE_BOOTLOADER` (id 73):** earlier notes said "never send id 73." That was over-cautious.
+The vendor app sends **73 → `WRITE_NEW_APP_DATA_LZO`(81)×N → `WRITE_NEW_APP_DATA`(3) tail** as its
+routine **resident-bootloader field-update** (decoded in
+[10-bootloader-over-ble.md](10-bootloader-over-ble.md)). Id 73 is the *first step* of that sequence,
+not a standalone brick command — but it is still the highest-risk operation on the board: only send
+it as part of a complete, verified bootloader rewrite, never on its own, since erasing the resident
+bootloader without writing a valid one removes the fail-safe recovery path.
 
 **Feasibility verdict:**
 - Flashing **tool** over BLE: **buildable now** (standard erase→write→jump; transport proven).

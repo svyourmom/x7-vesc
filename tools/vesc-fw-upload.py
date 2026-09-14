@@ -16,17 +16,29 @@ image fails safe and leaves the running app intact).
     # ACTUALLY FLASH (requires the bin, --yes, and you present with recovery ready)
     .venv/bin/python src/vesc-fw-upload.py flash reference/firmware/X9KV3_260714.bin --yes
 
+    # same, but LZO-compressed writes (id=81) like the vendor app -- fewer bytes on air
+    .venv/bin/python src/vesc-fw-upload.py flash reference/firmware/X9KV3_260714.bin --lzo --yes
+
+`--lzo` streams WRITE_NEW_APP_DATA_LZO(81) blocks (needs liblzo2); the on-wire block format
+matches the EBMX app's boot_loader.json. The uncompressed id=3 path stays the default. The LZO
+path here is verified host-side (each block is round-tripped through the decompressor) and matches
+the vendor stream, but has not been round-tripped on hardware in this repo -- prefer the default
+unless you have SWD recovery ready.
+
 DANGER: `flash` erases the new-app staging area and, on JUMP_TO_BOOTLOADER, asks the
 bootloader to overwrite the running firmware. Brick recovery = SWD/ST-Link on the board.
 """
-import argparse, asyncio, struct, sys, time
-from bleak import BleakScanner, BleakClient
+import argparse, asyncio, ctypes, struct, sys, time
+# bleak is imported lazily inside the BLE commands so `plan` stays truly zero-Bluetooth.
 
 ADDR   = "C5:22:A5:12:A4:9F"
 NUS_RX = "6e400002-b5a3-f393-e0a9-e50e24dcca9e"
 NUS_TX = "6e400003-b5a3-f393-e0a9-e50e24dcca9e"
 ERASE_NEW_APP, WRITE_NEW_APP_DATA, JUMP_TO_BOOTLOADER, FW_VERSION = 2, 3, 1, 0
-CHUNK = 240                       # data bytes/packet -> payload 245 <= 255 (short frame)
+WRITE_NEW_APP_DATA_LZO = 81       # LZO1X variant; payload = [81][off:u32 BE][declen:u16 BE][lzo]
+CHUNK   = 240                     # uncompressed: data bytes/packet -> payload 245 <= 255 (short frame)
+LZO_BLK = 384                     # LZO: decompressed bytes/block. 384 = the value the vendor app uses
+                                  # (seen in boot_loader.json) -- a device-proven, safe block size.
 
 def crc16(data: bytes) -> int:
     crc = 0
@@ -69,6 +81,43 @@ def build_image(fw: bytes) -> bytes:
     """[u32 size BE][u16 crc16(fw) BE][fw]  -- exactly what vesc_tool stages."""
     return struct.pack(">IH", len(fw), crc16(fw)) + fw
 
+# --- LZO1X (optional, --lzo). Matches the vendor app's WRITE_NEW_APP_DATA_LZO(81) stream:
+#     per block  [81][off:u32 BE][declen:u16 BE][lzo1x-bytes] , off = decompressed offset.
+# Compression is host-side via liblzo2; each block is round-tripped through the decompressor
+# here so we never put a stream on the wire that would not decode on the device (same LZO1X). ---
+class _Lzo:
+    def __init__(self):
+        try:
+            self.l = ctypes.CDLL("liblzo2.so.2")
+        except OSError:
+            sys.exit("--lzo needs liblzo2 (Debian/Ubuntu: apt install liblzo2-2)")
+        self.l.lzo1x_1_compress.restype = ctypes.c_int
+        self.l.lzo1x_1_compress.argtypes = [ctypes.c_char_p, ctypes.c_ulong, ctypes.c_char_p,
+                                            ctypes.POINTER(ctypes.c_ulong), ctypes.c_void_p]
+        self.l.lzo1x_decompress_safe.restype = ctypes.c_int
+        self.l.lzo1x_decompress_safe.argtypes = [ctypes.c_char_p, ctypes.c_ulong, ctypes.c_char_p,
+                                                 ctypes.POINTER(ctypes.c_ulong), ctypes.c_void_p]
+        self.wrk = ctypes.create_string_buffer(1 << 18)   # >= LZO1X_1_MEM_COMPRESS on 64-bit
+    def compress(self, block: bytes) -> bytes:
+        dst = ctypes.create_string_buffer(len(block) + len(block)//16 + 64 + 3)
+        dl = ctypes.c_ulong(len(dst))
+        if self.l.lzo1x_1_compress(block, len(block), dst, ctypes.byref(dl), self.wrk) != 0:
+            sys.exit("lzo compress failed")
+        comp = dst.raw[:dl.value]
+        chk = ctypes.create_string_buffer(len(block) + 64); cl = ctypes.c_ulong(len(chk))
+        if self.l.lzo1x_decompress_safe(comp, len(comp), chk, ctypes.byref(cl), None) != 0 \
+           or chk.raw[:cl.value] != block:
+            sys.exit("lzo self-check failed -- refusing to send an undecodable block")
+        return comp
+
+def lzo_packets(img: bytes, blk: int):
+    """yield (offset, declen, payload) WRITE_NEW_APP_DATA_LZO packets for the staged image."""
+    z = _Lzo()
+    for off in range(0, len(img), blk):
+        block = img[off:off+blk]
+        comp = z.compress(block)
+        yield off, len(block), bytes([WRITE_NEW_APP_DATA_LZO]) + struct.pack(">IH", off, len(block)) + comp
+
 def decode_fw(pl: bytes):
     if len(pl) < 3: return None
     hw = pl[3:].split(b"\x00")[0].decode("utf-8", "replace")
@@ -77,25 +126,36 @@ def decode_fw(pl: bytes):
 def cmd_plan(args):
     fw = open(args.bin, "rb").read()
     img = build_image(fw)
-    nchunks = (len(img) + CHUNK - 1) // CHUNK
     print(f"firmware file : {args.bin}")
     print(f"fw size       : {len(fw)} bytes")
     print(f"crc16(fw)     : 0x{crc16(fw):04X}")
     print(f"staged image  : {len(img)} bytes  (6-byte header + fw)")
     print(f"header (hex)   : {img[:6].hex()}   = size={struct.unpack('>I',img[:4])[0]} crc=0x{struct.unpack('>H',img[4:6])[0]:04X}")
     print(f"ERASE_NEW_APP  : 02 {len(img):08x}  (payload id=2 + u32 image size)")
-    print(f"WRITE packets  : {nchunks} x (id=3 + u32 offset + <=240 data)")
+    if args.lzo:
+        pkts = list(lzo_packets(img, args.lzo_block))
+        comp_total = sum(len(p) for _, _, p in pkts)
+        print(f"mode           : LZO (id=81), block={args.lzo_block} decompressed bytes")
+        print(f"WRITE packets  : {len(pkts)} x [81][u32 off][u16 declen][lzo]  "
+              f"(compressed payload {comp_total} B, {100*comp_total/max(len(img),1):.0f}% of raw)")
+        print(f"first WRITE pl : {pkts[0][2][:24].hex()} ...")
+    else:
+        nchunks = (len(img) + CHUNK - 1) // CHUNK
+        print(f"mode           : uncompressed (id=3)")
+        print(f"WRITE packets  : {nchunks} x (id=3 + u32 offset + <=240 data)")
+        print(f"first WRITE pl : {(bytes([WRITE_NEW_APP_DATA])+struct.pack('>I',0)+img[:16]).hex()} ...")
     print(f"JUMP_TO_BOOTLOADER: 01")
-    print(f"first WRITE pl : {(bytes([WRITE_NEW_APP_DATA])+struct.pack('>I',0)+img[:16]).hex()} ...")
     print("\n(plan only -- no Bluetooth was used)")
 
 async def _connect():
+    from bleak import BleakScanner
     dev = await BleakScanner.find_device_by_address(ADDR, timeout=25.0)
     if dev is None: sys.exit(f"{ADDR} not advertising -- powered on and in range?")
     return dev
 
 def cmd_preflight(args):
     async def run():
+        from bleak import BleakClient
         dev = await _connect(); un = Unframer(); got = []
         def on(_, d):
             for pl in un.feed(bytes(d)):
@@ -113,15 +173,18 @@ def cmd_preflight(args):
 def cmd_flash(args):
     fw = open(args.bin, "rb").read()
     img = build_image(fw)
-    nchunks = (len(img) + CHUNK - 1) // CHUNK
+    pkts = list(lzo_packets(img, args.lzo_block)) if args.lzo else None
+    nchunks = len(pkts) if args.lzo else (len(img) + CHUNK - 1) // CHUNK
+    mode = f"LZO id=81 blk={args.lzo_block}" if args.lzo else "uncompressed id=3"
     print(f"about to FLASH {args.bin}: fw={len(fw)}B crc=0x{crc16(fw):04X} image={len(img)}B "
-          f"({nchunks} write packets)")
+          f"({nchunks} write packets, {mode})")
     if not args.yes:
         sys.exit("refusing to flash without --yes")
     if input('type "FLASH" to proceed: ').strip() != "FLASH":
         sys.exit("aborted")
 
     async def run():
+        from bleak import BleakClient
         dev = await _connect(); un = Unframer()
         acks = asyncio.Queue()
         def on(_, d):
@@ -153,15 +216,20 @@ def cmd_flash(args):
             pl = await wait_ack(ERASE_NEW_APP, 15)
             if pl is None: sys.exit("  ERASE ack timeout -- aborting (nothing copied yet)")
             print(f"  erase ack: {pl.hex()}")
-            # write chunks
+            # write chunks. Both id=3 and id=81 are handled by the same firmware routine and
+            # reply with id=3 (WRITE_NEW_APP_DATA) -- confirmed by the vendor transcript acks.
             t0 = time.time()
             for k in range(nchunks):
-                off = k * CHUNK
-                await send(client, bytes([WRITE_NEW_APP_DATA]) + struct.pack(">I", off) + img[off:off+CHUNK])
+                if args.lzo:
+                    off, _declen, payload = pkts[k]
+                else:
+                    off = k * CHUNK
+                    payload = bytes([WRITE_NEW_APP_DATA]) + struct.pack(">I", off) + img[off:off+CHUNK]
+                await send(client, payload)
                 pl = await wait_ack(WRITE_NEW_APP_DATA, 4)
                 if pl is None: sys.exit(f"\n  WRITE ack timeout at offset {off} -- aborting (no jump sent; running app intact)")
                 if k % 25 == 0 or k == nchunks-1:
-                    pct = 100*(k+1)/nchunks; rate=(off+CHUNK)/max(time.time()-t0,1e-3)
+                    pct = 100*(k+1)/nchunks; rate=(off+LZO_BLK if args.lzo else off+CHUNK)/max(time.time()-t0,1e-3)
                     print(f"\r  writing {k+1}/{nchunks} ({pct:4.1f}%)  {rate/1024:5.1f} KiB/s", end="", flush=True)
             print("\n  all chunks acked.")
             if args.no_jump:
@@ -177,11 +245,16 @@ def cmd_flash(args):
 def main():
     ap = argparse.ArgumentParser()
     sub = ap.add_subparsers(dest="cmd", required=True)
-    p = sub.add_parser("plan"); p.add_argument("bin"); p.set_defaults(fn=cmd_plan)
+    def add_lzo(pp):
+        pp.add_argument("--lzo", action="store_true",
+                        help="compress writes with LZO1X (id=81), as the vendor app does; needs liblzo2")
+        pp.add_argument("--lzo-block", type=int, default=LZO_BLK, metavar="N",
+                        help=f"LZO decompressed bytes/block (default {LZO_BLK}, the vendor-observed size)")
+    p = sub.add_parser("plan"); p.add_argument("bin"); add_lzo(p); p.set_defaults(fn=cmd_plan)
     p = sub.add_parser("preflight"); p.set_defaults(fn=cmd_preflight)
     p = sub.add_parser("flash"); p.add_argument("bin"); p.add_argument("--yes", action="store_true")
     p.add_argument("--no-jump", action="store_true", help="stage only, do not JUMP_TO_BOOTLOADER")
-    p.set_defaults(fn=cmd_flash)
+    add_lzo(p); p.set_defaults(fn=cmd_flash)
     a = ap.parse_args(); a.fn(a)
 
 if __name__ == "__main__":

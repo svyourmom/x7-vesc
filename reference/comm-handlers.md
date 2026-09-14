@@ -136,3 +136,10 @@ Reject/default handler (unimplemented ids) = `0x0801b54c`.
 | 255 | (id 255) | `0x0801c886` | impl |
 
 **Notable:** LISP (130-136) and BMS_FWD_CAN_RX (113) all route to the reject handler (LispBM stripped, no CAN-RX injection). FORWARD_CAN(34), CUSTOM_APP_DATA(36) implemented but limited (see firmware map). EBMX customisation is mostly *inside* stock handlers (SET_MCCONF sentinel validation, GET_VALUES_SETUP battery-field repurposing), not new COMM ids.
+
+**Firmware/bootloader update ids (confirmed against the vendor app, 1.0.6):** the app's
+`boot_loader.json` shows the resident-bootloader field-update as **`ERASE_BOOTLOADER`(73) →
+`WRITE_NEW_APP_DATA_LZO`(81)×N → `WRITE_NEW_APP_DATA`(3) tail**. Both id 3 and id 81 share write
+handler `0x0801ba4e` and **reply with id 3** (`[3, ok, offset]`). App uploads carry a 0-based
+offset; the bootloader update is `0x60000`-based. Full decode + a replay-based recovery tool:
+[../docs/10-bootloader-over-ble.md](../docs/10-bootloader-over-ble.md).

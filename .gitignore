@@ -24,3 +24,6 @@ venv/
 # --- OS ---
 .DS_Store
 Thumbs.db
+
+# --- vendor app bootloader transcript (contains the BL image; keep private) ---
+boot_loader.json

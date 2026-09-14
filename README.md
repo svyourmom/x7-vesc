@@ -6,10 +6,11 @@ controller (as used on modified Talaria / Sur-Ron-class ebikes). Companion to th
 — part of an open collection of ebike how-tos, teardowns, and mods.
 
 Everything here was produced from a controller the author owns, over its own Bluetooth
-interface, and from analysis of the controller's official firmware image (published at
+interface, from analysis of the controller's official firmware image (published at
 [CYC-EBMX-Development/firmware](https://github.com/CYC-EBMX-Development/firmware); not mirrored
-here). The goal is **documentation and interoperability** (talk to the hardware you own), in the
-spirit of right-to-repair.
+here), and from analysis of the official EBMX / CYC "Firmware Update" Android app (behavioural
+decode only; no app or firmware binary redistributed). The goal is **documentation and
+interoperability** (talk to the hardware you own), in the spirit of right-to-repair.
 
 ## TL;DR — what the X-9000 exposes
 
@@ -22,7 +23,11 @@ spirit of right-to-repair.
   (`GET_VALUES_SELECTIVE`), and with the display removed the bike can be **driven entirely from
   Bluetooth** ([docs/08](docs/08-display-less-operation.md)).
 - Firmware update over BLE is the **stock VESC OTA flow** with a **CRC-16 check only (no
-  signature)**, so the controller will accept and run a user-built firmware image.
+  signature)**, so the controller will accept and run a user-built firmware image. The **official
+  EBMX app** confirms this: it needs no `INTERNET` permission and flashes any user-picked `.bin`.
+- Even the **resident bootloader is field-updatable over BLE** (`ERASE_BOOTLOADER` → LZO writes),
+  decoded from the official app — which also gives a **replay-based bootloader-recovery** path
+  ([docs/10](docs/10-bootloader-over-ble.md)).
 
 ## Contents
 
@@ -37,6 +42,7 @@ spirit of right-to-repair.
 | [docs/07-firmware-map-full.md](docs/07-firmware-map-full.md) | **the full firmware map** — memory globals, dispatch tables, subsystems, addresses |
 | [docs/08-display-less-operation.md](docs/08-display-less-operation.md) | **how-to: drive from Bluetooth with the display removed** — read/set gear + mode, current-limit scale, app-as-cockpit |
 | [docs/09-build-custom-firmware.md](docs/09-build-custom-firmware.md) | **how-to: build + flash the injector firmware end to end** — get your own baseline, patch it, flash it |
+| [docs/10-bootloader-over-ble.md](docs/10-bootloader-over-ble.md) | **the bootloader update/recovery flow** — decoded from the official app (73 → LZO writes → tail), confirmed addresses, and replay-based recovery |
 | [reference/](reference/) | firmware analysis: function inventory + command/dispatch maps + protocol decodes (logic, not code) |
 | [tools/](tools/) | Python tools: BLE VESC client, firmware uploader, patch builder |
 | [hardware/](hardware/) | teardown / hardware notes (WIP) |

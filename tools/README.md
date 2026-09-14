@@ -10,7 +10,9 @@ Minimal Python tools for talking to an X-9000 over its BLE VESC channel. They us
 | tool | what it does |
 |---|---|
 | `vesc-ble.py` | VESC-over-BLE client: `fw`, `values`, `setup`, `sel`, `term "<cmd>"`, `listen`, `raw <hex>`. Motor-command ids are refused unless `--force`. |
-| `vesc-fw-upload.py` | Firmware uploader (see [../docs/05-flashing-over-ble.md](../docs/05-flashing-over-ble.md)). `plan` (dry run, no BLE) → `preflight` (read fw) → `flash <bin> --yes`. |
+| `vesc-fw-upload.py` | Firmware uploader (see [../docs/05-flashing-over-ble.md](../docs/05-flashing-over-ble.md)). `plan` (dry run, no BLE) → `preflight` (read fw) → `flash <bin> --yes`. Add `--lzo` to stream compressed writes (id 81) like the vendor app (needs `liblzo2`). |
+| `bl-recover.py` | **Bootloader recovery over BLE** by replaying the vendor app's `boot_loader.json` transcript with per-packet ack verification (see [../docs/10-bootloader-over-ble.md](../docs/10-bootloader-over-ble.md)). `plan` (no BLE) → `preflight` → `send <boot_loader.json> --yes`. Highest brick risk of anything here. |
+| `decode-bootloader-json.py` | Analysis-only (no BLE): decode `boot_loader.json` into the wire sequence (`plan`) or rebuild the bootloader image for inspection (`rebuild`, needs `liblzo2`). |
 | `build-canrx-fw.py` | Build the CAN-RX injector patched image from your baseline (see [../docs/09-build-custom-firmware.md](../docs/09-build-custom-firmware.md)). `plan` (dry run) → `build`. Refuses any image that isn't the known build. |
 | `canrx_stub.s` | ARM Thumb-2 source for the CAN-RX injector stub (see [../docs/06-mods-mode-over-ble.md](../docs/06-mods-mode-over-ble.md)). `build-canrx-fw.py` assembles it for you, or assemble with `arm-none-eabi-as`/`ld`. |
 | `bms-sim.py` | Reference VESC-BMS CAN frame builder (SocketCAN). Note: **this X-9000 build does not decode BMS-over-CAN**, but the encoder is useful with other VESC hardware / for reference. |
@@ -36,3 +38,8 @@ python3 build-canrx-fw.py plan my_baseline.bin \
 ⚠️ `vesc-fw-upload.py flash` writes controller firmware. Read the flashing doc and understand the
 brick/SWD-recovery risk first. `build-canrx-fw.py` produces a firmware image (a derivative of the
 vendor firmware): it is gitignored — keep it private, never commit it.
+
+⚠️⚠️ `bl-recover.py send` erases and rewrites the **resident bootloader** — the single
+highest-brick-risk action. Only run it to recover a controller whose bootloader is already suspect,
+with SWD/ST-Link on hand. It needs a `boot_loader.json` extracted from your **own** copy of the
+EBMX app; that file contains the vendor bootloader image and is **gitignored — never commit it**.
